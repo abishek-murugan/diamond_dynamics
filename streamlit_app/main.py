@@ -166,19 +166,26 @@ with tab_eda:
     plots_dir = config.get_path("plots_dir")
     col1, col2 = st.columns(2)
     with col1:
-        st.image(os.path.join(plots_dir, "cluster_plot_2d.png")) if os.path.exists(
-            os.path.join(plots_dir, "cluster_plot_2d.png")
-        ) else st.warning("Plot missing")
-        st.image(os.path.join(plots_dir, "carat_vs_price.png")) if os.path.exists(
-            os.path.join(plots_dir, "carat_vs_price.png")
-        ) else st.warning("Plot missing")
+        if os.path.exists(os.path.join(plots_dir, "cluster_plot_2d.png")):
+            st.image(os.path.join(plots_dir, "cluster_plot_2d.png"))
+        else:
+            st.warning("Plot missing")
+            
+        if os.path.exists(os.path.join(plots_dir, "carat_vs_price.png")):
+            st.image(os.path.join(plots_dir, "carat_vs_price.png"))
+        else:
+            st.warning("Plot missing")
+            
     with col2:
-        st.image(os.path.join(plots_dir, "correlation_heatmap.png")) if os.path.exists(
-            os.path.join(plots_dir, "correlation_heatmap.png")
-        ) else st.warning("Plot missing")
-        st.image(os.path.join(plots_dir, "price_variations_boxplot.png")) if os.path.exists(
-            os.path.join(plots_dir, "price_variations_boxplot.png")
-        ) else st.warning("Plot missing")
+        if os.path.exists(os.path.join(plots_dir, "correlation_heatmap.png")):
+            st.image(os.path.join(plots_dir, "correlation_heatmap.png"))
+        else:
+            st.warning("Plot missing")
+            
+        if os.path.exists(os.path.join(plots_dir, "price_variations_boxplot.png")):
+            st.image(os.path.join(plots_dir, "price_variations_boxplot.png"))
+        else:
+            st.warning("Plot missing")
 
 with tab_performance:
     st.markdown("### Model Performance")

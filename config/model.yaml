@@ -13,11 +13,7 @@ features:
     - "clarity_encoded"
     - "depth"
     - "table"
-    - "x"
-    - "y"
-    - "z"
     - "volume_log"
-    - "dimension_ratio"
     - "carat_category_encoded"
   clustering:
     - "carat"
@@ -26,11 +22,7 @@ features:
     - "clarity_encoded"
     - "depth"
     - "table"
-    - "x"
-    - "y"
-    - "z"
     - "volume"
-    - "dimension_ratio"
     - "carat_category_encoded"
 
 mappings:
