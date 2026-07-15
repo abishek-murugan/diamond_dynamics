@@ -2,9 +2,31 @@
 
 import pickle
 import os
+import sys
 from pathlib import Path
 from typing import Any
 from src.utils.exceptions import ModelLoadError
+
+# --- MOCK CUML FOR GPU-TRAINED MODELS ---
+# The models were trained using RAPIDS (cuml) on Google Colab.
+# Since cuml requires specific NVIDIA environments, we mock it 
+# to fallback to the equivalent scikit-learn classes which share the same API.
+try:
+    import cuml
+except ImportError:
+    import sklearn.preprocessing
+    import sklearn.cluster
+    import sklearn.ensemble
+    
+    class CumlMock:
+        pass
+        
+    cuml_mock = CumlMock()
+    sys.modules['cuml'] = cuml_mock
+    sys.modules['cuml.preprocessing'] = sklearn.preprocessing
+    sys.modules['cuml.cluster'] = sklearn.cluster
+    sys.modules['cuml.ensemble'] = sklearn.ensemble
+# ----------------------------------------
 
 
 def load_pickle(file_path: str) -> Any:
