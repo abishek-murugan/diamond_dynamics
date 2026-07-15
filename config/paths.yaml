@@ -1,0 +1,5 @@
+models_dir: "models/"
+data_raw: "data/raw/diamonds.csv"
+plots_dir: "plots/"
+reports_dir: "reports/"
+logs_dir: "logs/"

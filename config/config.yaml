@@ -1,0 +1,5 @@
+app_name: "Diamond Dynamics"
+conversion_rate: 83.0
+ui:
+  theme: "dark"
+  layout: "wide"

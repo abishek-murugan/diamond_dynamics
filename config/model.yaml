@@ -1,0 +1,59 @@
+regression_model: "best_regression_model.pkl"
+regression_scaler: "regression_scaler.pkl"
+clustering_model: "best_clustering_model.pkl"
+clustering_scaler: "clustering_scaler.pkl"
+cluster_names: "cluster_names.pkl"
+regression_results: "regression_results.csv"
+
+features:
+  regression:
+    - "carat_log"
+    - "cut_encoded"
+    - "color_encoded"
+    - "clarity_encoded"
+    - "depth"
+    - "table"
+    - "x"
+    - "y"
+    - "z"
+    - "volume_log"
+    - "dimension_ratio"
+    - "carat_category_encoded"
+  clustering:
+    - "carat"
+    - "cut_encoded"
+    - "color_encoded"
+    - "clarity_encoded"
+    - "depth"
+    - "table"
+    - "x"
+    - "y"
+    - "z"
+    - "volume"
+    - "dimension_ratio"
+    - "carat_category_encoded"
+
+mappings:
+  cut:
+    'Fair': 1
+    'Good': 2
+    'Very Good': 3
+    'Premium': 4
+    'Ideal': 5
+  color:
+    'J': 1
+    'I': 2
+    'H': 3
+    'G': 4
+    'F': 5
+    'E': 6
+    'D': 7
+  clarity:
+    'I1': 1
+    'SI2': 2
+    'SI1': 3
+    'VS2': 4
+    'VS1': 5
+    'VVS2': 6
+    'VVS1': 7
+    'IF': 8
